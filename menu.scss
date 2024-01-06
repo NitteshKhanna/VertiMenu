@@ -1,0 +1,46 @@
+html
+{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    body 
+    {
+        padding: 0;
+        margin: 0;
+        nav-vert
+        {
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            top: 10vh;
+            left: 0;
+            min-width: 5vw;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: aliceblue;
+            nav-item 
+            {
+                flex-basis: 100%;
+                padding: 5px;
+                display: flex;
+                // justify-content: space-between;
+                nav-icon
+                {
+                    margin-right: 3px;
+                    ion-icon 
+                    { 
+                        width: 20px;
+                        height: 20px;
+                        color: white;
+                    }
+                }
+                nav-label
+                {
+                    color: white;
+                    // margin-bottom: 5px;
+                }
+            }
+        }
+        
+    }
+}

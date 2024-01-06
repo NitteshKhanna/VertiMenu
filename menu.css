@@ -1,0 +1,36 @@
+html {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+html body {
+  padding: 0;
+  margin: 0;
+}
+html body nav-vert {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  min-width: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: aliceblue;
+}
+html body nav-vert nav-item {
+  flex-basis: 100%;
+  padding: 5px;
+  display: flex;
+}
+html body nav-vert nav-item nav-icon {
+  margin-right: 3px;
+}
+html body nav-vert nav-item nav-icon ion-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+html body nav-vert nav-item nav-label {
+  color: white;
+}/*# sourceMappingURL=menu.css.map */
