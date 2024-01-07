@@ -1,3 +1,7 @@
+* {
+  transition: 0.5s;
+}
+
 html {
   padding: 0;
   margin: 0;
@@ -14,17 +18,22 @@ html body nav-vert {
   top: 10vh;
   left: 0;
   min-width: 5vw;
+  width: -moz-min-content;
+  width: min-content;
+  max-width: 7vw;
   display: flex;
   flex-wrap: wrap;
-  background-color: aliceblue;
 }
 html body nav-vert nav-item {
   flex-basis: 100%;
   padding: 5px;
   display: flex;
+  width: -moz-min-content;
+  width: min-content;
+  align-items: center;
 }
 html body nav-vert nav-item nav-icon {
-  margin-right: 3px;
+  margin-right: 7px;
 }
 html body nav-vert nav-item nav-icon ion-icon {
   width: 20px;
@@ -33,4 +42,10 @@ html body nav-vert nav-item nav-icon ion-icon {
 }
 html body nav-vert nav-item nav-label {
   color: white;
+}
+html body nav-vert nav-item:hover nav-icon ion-icon {
+  color: rgb(255, 255, 189);
+}
+html body nav-vert nav-item:hover nav-label {
+  color: rgb(255, 255, 189);
 }/*# sourceMappingURL=menu.css.map */

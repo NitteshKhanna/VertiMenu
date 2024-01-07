@@ -1,3 +1,7 @@
+*
+{
+    transition: .5s;
+}
 html
 {
     padding: 0;
@@ -15,18 +19,22 @@ html
             top: 10vh;
             left: 0;
             min-width: 5vw;
+            width: min-content;
+            max-width: 7vw;
             display: flex;
             flex-wrap: wrap;
-            background-color: aliceblue;
+            
             nav-item 
             {
                 flex-basis: 100%;
                 padding: 5px;
                 display: flex;
-                // justify-content: space-between;
+                width: min-content;
+                align-items: center;
+                
                 nav-icon
                 {
-                    margin-right: 3px;
+                    margin-right: 7px;
                     ion-icon 
                     { 
                         width: 20px;
@@ -38,6 +46,20 @@ html
                 {
                     color: white;
                     // margin-bottom: 5px;
+                }
+                &:hover
+                {
+                    nav-icon 
+                    {
+                        ion-icon
+                        {
+                            color: rgb(255, 255, 189);
+                        }
+                    }
+                    nav-label
+                    {
+                        color: rgb(255, 255, 189);
+                    }
                 }
             }
         }
