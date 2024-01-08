@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   transition: 0.5s;
 }
@@ -12,6 +13,7 @@ html body {
   margin: 0;
 }
 html body nav-vert {
+  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
   position: fixed;
@@ -20,7 +22,7 @@ html body nav-vert {
   min-width: 5vw;
   width: -moz-min-content;
   width: min-content;
-  max-width: 7vw;
+  max-width: max-content1vw;
   display: flex;
   flex-wrap: wrap;
 }
@@ -28,9 +30,10 @@ html body nav-vert nav-item {
   flex-basis: 100%;
   padding: 5px;
   display: flex;
-  width: -moz-min-content;
-  width: min-content;
+  width: -moz-max-content;
+  width: max-content;
   align-items: center;
+  cursor: pointer;
 }
 html body nav-vert nav-item nav-icon {
   margin-right: 7px;
@@ -48,4 +51,13 @@ html body nav-vert nav-item:hover nav-icon ion-icon {
 }
 html body nav-vert nav-item:hover nav-label {
   color: rgb(255, 255, 189);
+}
+html body nav-vert nav-item.current {
+  margin-left: 1rem;
+}
+html body nav-vert nav-item.current nav-icon ion-icon {
+  color: teal;
+}
+html body nav-vert nav-item.current nav-label {
+  color: teal;
 }/*# sourceMappingURL=menu.css.map */

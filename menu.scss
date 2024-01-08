@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *
 {
     transition: .5s;
@@ -13,6 +14,7 @@ html
         margin: 0;
         nav-vert
         {
+            font-family: 'Poppins', sans-serif;
             padding: 0;
             margin: 0;
             position: fixed;
@@ -20,7 +22,7 @@ html
             left: 0;
             min-width: 5vw;
             width: min-content;
-            max-width: 7vw;
+            max-width: max-content + 1vw;
             display: flex;
             flex-wrap: wrap;
             
@@ -29,9 +31,9 @@ html
                 flex-basis: 100%;
                 padding: 5px;
                 display: flex;
-                width: min-content;
+                width: max-content;
                 align-items: center;
-                
+                cursor: pointer;
                 nav-icon
                 {
                     margin-right: 7px;
@@ -59,6 +61,21 @@ html
                     nav-label
                     {
                         color: rgb(255, 255, 189);
+                    }
+                }
+                &.current
+                {
+                    margin-left: 1rem;
+                    nav-icon
+                    {
+                        ion-icon
+                        {
+                            color: teal;
+                        }
+                    }
+                    nav-label
+                    {
+                        color: teal;
                     }
                 }
             }
