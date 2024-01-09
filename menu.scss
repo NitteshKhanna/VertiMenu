@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*
-{
-    transition: .5s;
-}
 html
 {
     padding: 0;
@@ -14,6 +10,7 @@ html
         margin: 0;
         nav-vert
         {
+            transition: .5s;
             font-family: 'Poppins', sans-serif;
             padding: 0;
             margin: 0;
@@ -25,9 +22,69 @@ html
             max-width: max-content + 1vw;
             display: flex;
             flex-wrap: wrap;
-            
+            sub-nav 
+            {
+                transition: .5s;
+                display: none;
+                margin-left: 2rem;
+                position: relative;
+                z-index: 0;
+
+                .connection 
+                {
+                    display: none;
+                }
+                .connection.connected
+                {
+                    
+                    display: block;
+                }
+                .connection.connection-1 
+                {
+                    // display: none;
+                    position: absolute;
+                    width: .5rem;
+                    height: 1rem;
+                    border-top: none;
+                    border-right: none;
+                    border-bottom: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-left: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-bottom-left-radius: .2rem;
+                }
+                .connection.connection-2
+                {
+                    // display: none;
+                    position: absolute;
+                    width: .5rem;
+                    height: 3rem;
+                    top: 0;
+                    border-top: none;
+                    border-right: none;
+                    border-bottom: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-left: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-bottom-left-radius: .2rem;
+                }
+                .connection.connection-3
+                {
+                    // display: none;
+                    position: absolute;
+                    width: .5rem;
+                    height: 5.5rem;
+                    top: 0;
+                    border-top: none;
+                    border-right: none;
+                    border-bottom: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-left: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-bottom-left-radius: .2rem;
+                }
+                nav-item
+                {
+                    margin-left: 1rem;
+                }
+            }
             nav-item 
             {
+                transition: .5s;
                 flex-basis: 100%;
                 padding: 5px;
                 display: flex;
@@ -36,9 +93,11 @@ html
                 cursor: pointer;
                 nav-icon
                 {
+                    transition: .5s;
                     margin-right: 7px;
                     ion-icon 
                     { 
+                        transition: .5s;
                         width: 20px;
                         height: 20px;
                         color: white;
@@ -46,35 +105,44 @@ html
                 }
                 nav-label
                 {
+                    transition: .5s;
                     color: white;
-                    // margin-bottom: 5px;
                 }
                 &:hover
                 {
+                    transition: .5s;
+                    margin-left: 1rem;
                     nav-icon 
                     {
+                        transition: .5s;
                         ion-icon
                         {
+                            transition: .5s;
                             color: rgb(255, 255, 189);
                         }
                     }
                     nav-label
                     {
+                        transition: .5s;
                         color: rgb(255, 255, 189);
                     }
                 }
                 &.current
                 {
+                    transition: .5s;
                     margin-left: 1rem;
                     nav-icon
                     {
+                        transition: .5s;
                         ion-icon
                         {
+                            transition: .5s;
                             color: teal;
                         }
                     }
                     nav-label
                     {
+                        transition: .5s;
                         color: teal;
                     }
                 }

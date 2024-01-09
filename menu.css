@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-* {
-  transition: 0.5s;
-}
-
 html {
   padding: 0;
   margin: 0;
@@ -13,6 +9,7 @@ html body {
   margin: 0;
 }
 html body nav-vert {
+  transition: 0.5s;
   font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
@@ -26,7 +23,56 @@ html body nav-vert {
   display: flex;
   flex-wrap: wrap;
 }
+html body nav-vert sub-nav {
+  transition: 0.5s;
+  display: none;
+  margin-left: 2rem;
+  position: relative;
+  z-index: 0;
+}
+html body nav-vert sub-nav .connection {
+  display: none;
+}
+html body nav-vert sub-nav .connection.connected {
+  display: block;
+}
+html body nav-vert sub-nav .connection.connection-1 {
+  position: absolute;
+  width: 0.5rem;
+  height: 1rem;
+  border-top: none;
+  border-right: none;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-bottom-left-radius: 0.2rem;
+}
+html body nav-vert sub-nav .connection.connection-2 {
+  position: absolute;
+  width: 0.5rem;
+  height: 3rem;
+  top: 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-bottom-left-radius: 0.2rem;
+}
+html body nav-vert sub-nav .connection.connection-3 {
+  position: absolute;
+  width: 0.5rem;
+  height: 5.5rem;
+  top: 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-bottom-left-radius: 0.2rem;
+}
+html body nav-vert sub-nav nav-item {
+  margin-left: 1rem;
+}
 html body nav-vert nav-item {
+  transition: 0.5s;
   flex-basis: 100%;
   padding: 5px;
   display: flex;
@@ -36,28 +82,46 @@ html body nav-vert nav-item {
   cursor: pointer;
 }
 html body nav-vert nav-item nav-icon {
+  transition: 0.5s;
   margin-right: 7px;
 }
 html body nav-vert nav-item nav-icon ion-icon {
+  transition: 0.5s;
   width: 20px;
   height: 20px;
   color: white;
 }
 html body nav-vert nav-item nav-label {
+  transition: 0.5s;
   color: white;
 }
+html body nav-vert nav-item:hover {
+  transition: 0.5s;
+  margin-left: 1rem;
+}
+html body nav-vert nav-item:hover nav-icon {
+  transition: 0.5s;
+}
 html body nav-vert nav-item:hover nav-icon ion-icon {
+  transition: 0.5s;
   color: rgb(255, 255, 189);
 }
 html body nav-vert nav-item:hover nav-label {
+  transition: 0.5s;
   color: rgb(255, 255, 189);
 }
 html body nav-vert nav-item.current {
+  transition: 0.5s;
   margin-left: 1rem;
 }
+html body nav-vert nav-item.current nav-icon {
+  transition: 0.5s;
+}
 html body nav-vert nav-item.current nav-icon ion-icon {
+  transition: 0.5s;
   color: teal;
 }
 html body nav-vert nav-item.current nav-label {
+  transition: 0.5s;
   color: teal;
 }/*# sourceMappingURL=menu.css.map */

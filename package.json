@@ -1,0 +1,19 @@
+{
+  "name": "Vertical_arrow_menu",
+  "main": "menu.html",
+  "scripts": {
+    "start": "concurrently \"npm run watch:scss\" \"npm run watch:ts\"",
+    "build:scss": "sass ./src/ -o ./dist/",
+    "watch:scss": "npm run build:scss -- --watch",
+    "build:ts": "tsc",
+    "watch:ts": "npm run build:ts -- --watch"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "sass": "^1.49.11",
+    "typescript": "^4.9.4"
+  }
+}

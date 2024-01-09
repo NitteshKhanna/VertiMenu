@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-    <nav-vert>
-        <nav-item >
+
+    <nav-vert id="nav-vert">
+        <nav-item>
             <nav-icon><ion-icon name="home-outline"></ion-icon></nav-icon>
             <nav-label class="current" >Home</nav-label>
         </nav-item>
@@ -17,15 +18,33 @@
             <nav-icon><ion-icon name="accessibility-outline"></ion-icon></nav-icon>
             <nav-label>About</nav-label>
         </nav-item>
-        <nav-item>
+        <nav-item class="Store">
             <nav-icon><ion-icon name="apps-outline"></ion-icon></nav-icon>
             <nav-label>Store</nav-label>
         </nav-item>
+        <sub-nav class="Store-sub">
+            <div class="connection connection-1"></div>
+            <nav-item>
+                <nav-icon><ion-icon name="apps-outline"></ion-icon></nav-icon>
+                <nav-label id="f">Store 1</nav-label>
+            </nav-item>
+            <div class="connection connection-2"></div>
+            <nav-item>
+                <nav-icon><ion-icon name="apps-outline"></ion-icon></nav-icon>
+                <nav-label>Store 2</nav-label>
+            </nav-item>
+            <div class="connection connection-3"></div>
+            <nav-item>
+                <nav-icon><ion-icon name="apps-outline"></ion-icon></nav-icon>
+                <nav-label>Store 3</nav-label>
+            </nav-item>
+        </sub-nav>
         <nav-item>
             <nav-icon><ion-icon name="add-circle-outline"></ion-icon></nav-icon>
             <nav-label>Add new</nav-label>
         </nav-item>
     </nav-vert>
+
     <script src="./dist/menu.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
