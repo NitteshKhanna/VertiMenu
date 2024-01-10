@@ -3,16 +3,20 @@ document.addEventListener("DOMContentLoaded", nav_vert_init);
 //Initiates the nav-vert
 function nav_vert_init() {
     //checks if there is actually a nav-vert in the html file
-    var nav_vert = document.querySelector("NAV-VERT");
-    if (!nav_vert) {
-        console.log("no nav-vert :(");
-        return;
+    let nav_verts = Array.from(document.querySelectorAll("NAV-VERT"));
+    if (nav_verts) {
+        nav_verts.forEach((nav_vert) => {
+            if (!nav_vert) {
+                console.log("no nav-vert :(");
+                return;
+            }
+            //initializing all the sub-navs with connections
+            subNavInit(nav_vert);
+            //adding the eventlisteners onto all the nav-items
+            let nav_items = nav_vert.querySelectorAll("NAV-ITEM");
+            nav_items.forEach((nav_item) => nav_item.addEventListener("click", (event) => menuItemClicked(event)));
+        });
     }
-    //initializing all the sub-navs with connections
-    subNavInit(nav_vert);
-    //adding the eventlisteners onto all the nav-items
-    let nav_items = nav_vert.querySelectorAll("NAV-ITEM");
-    nav_items.forEach((nav_item) => nav_item.addEventListener("click", (event) => menuItemClicked(event)));
 }
 //when an item in the menu is clicked
 function menuItemClicked(event) {
@@ -35,15 +39,22 @@ function menuItemClicked(event) {
             }
         }
     }
-    //hiding or displaying the submenu appropirately
-    let subMenu = document.querySelector(".Store-sub");
-    if (subMenu && ((_a = currentElement === null || currentElement === void 0 ? void 0 : currentElement.parentElement) === null || _a === void 0 ? void 0 : _a.tagName) == "NAV-VERT") {
-        if ((currentElement === null || currentElement === void 0 ? void 0 : currentElement.classList[0]) == "Store") {
-            subMenu.style.display = "block";
+    if (((_a = currentElement === null || currentElement === void 0 ? void 0 : currentElement.parentElement) === null || _a === void 0 ? void 0 : _a.tagName) == "NAV-VERT") {
+        let parentNav = currentElement.parentElement;
+        let children = Array.from(parentNav.children);
+        let position = children.indexOf(currentElement);
+        if (children.length - 1 != position && children[position + 1].tagName == "SUB-NAV") {
+            subNavInit(parentNav);
+            let subNav = children[position + 1];
+            subNav.style.display = "block";
+            let navItems = Array.from(subNav.querySelectorAll("NAV-ITEM"));
+            let defaultConnectionLength = (navItems[0].clientHeight * navItems.length) - (navItems[0].clientHeight / 2);
+            subNav.querySelector(".connection").style.height = defaultConnectionLength + "px";
         }
-        else {
-            subMenu.style.display = "none";
-        }
+        children.forEach((element, index) => {
+            if (index != position + 1 && element.tagName == "SUB-NAV")
+                element.style.display = "none";
+        });
     }
 }
 function removeAlreadyCurrent(currentItem) {
@@ -77,6 +88,8 @@ function subNavInit(parentNavVert) {
             console.log("Sub nav of the sub nav item was not found");
             return;
         }
+        let navItems = Array.from(parentSubNav.querySelectorAll("NAV-ITEM"));
+        let defaultConnectionLength = navItems[0].clientHeight * navItems.length;
         //remove existing connections 
         let connectionsArray = Array.from(parentSubNav.querySelectorAll(".connection"));
         connectionsArray.forEach((connection) => parentSubNav === null || parentSubNav === void 0 ? void 0 : parentSubNav.removeChild(connection));
