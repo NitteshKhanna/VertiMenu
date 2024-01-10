@@ -5,7 +5,7 @@ function nav_vert_init() {
     var nav_vert = document.querySelector("nav-vert");
     //checks if there is actually a nav-vert in the html file
     if (nav_vert == null) {
-        console.log("no nav-vert :( ");
+        console.log("no nav-vert :(");
         return;
     }
     //adding the eventlisteners onto all the nav-items
@@ -73,17 +73,19 @@ function subNavInit(subNavItem) {
     if (parentSubNav) {
         let connectedNavs = parentSubNav.querySelectorAll(".connected");
         for (let i = 0; i < connectedNavs.length; i++) {
+            setTimeout(() => {
+                connection === null || connection === void 0 ? void 0 : connection.classList.add("connected");
+            }, 250);
             connectedNavs[i].classList.remove("connected");
         }
     }
     let navItems = Array.from(parentSubNav === null || parentSubNav === void 0 ? void 0 : parentSubNav.querySelectorAll("NAV-ITEM"));
     let connections = Array.from(parentSubNav === null || parentSubNav === void 0 ? void 0 : parentSubNav.querySelectorAll(".connection"));
     let connection = connections[navItems.indexOf(subNavItem)];
-    console.log(connection);
     if (connection) {
         //timing the change, have to make it a bit more smoother than this 
         setTimeout(() => {
             connection === null || connection === void 0 ? void 0 : connection.classList.add("connected");
-        }, 500);
+        }, 250);
     }
 }

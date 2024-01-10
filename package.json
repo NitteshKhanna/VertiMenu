@@ -1,19 +1,18 @@
 {
-  "name": "Vertical_arrow_menu",
-  "main": "menu.html",
+  "name": "vertical_arrow_menu",
   "scripts": {
-    "start": "concurrently \"npm run watch:scss\" \"npm run watch:ts\"",
-    "build:scss": "sass ./src/ -o ./dist/",
-    "watch:scss": "npm run build:scss -- --watch",
-    "build:ts": "tsc",
-    "watch:ts": "npm run build:ts -- --watch"
+    "watch-scss": "sass -w src/scss:dist/css",
+    "watch-ts": "tsc -w",
+    "start": "concurrently \"npm run watch-scss\" \"npm run watch-ts\""
   },
   "keywords": [],
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^7.4.0",
-    "sass": "^1.49.11",
-    "typescript": "^4.9.4"
-  }
+    "concurrently": "^8.2.2",
+    "sass": "^1.69.5",
+    "typescript": "^5.3.3"
+  },
+  "version": "1.0.0",
+  "description": ""
 }

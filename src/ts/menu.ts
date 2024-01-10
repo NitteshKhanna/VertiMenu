@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded",nav_vert_init)
-
 //Initiates the nav-vert
 function nav_vert_init()
 {
@@ -7,7 +6,7 @@ function nav_vert_init()
     //checks if there is actually a nav-vert in the html file
     if(nav_vert == null)
     {
-        console.log("no nav-vert :( ");
+        console.log("no nav-vert :(");
         return;
     }
     //adding the eventlisteners onto all the nav-items
@@ -96,6 +95,9 @@ function subNavInit(subNavItem: HTMLElement)
         let connectedNavs = parentSubNav.querySelectorAll(".connected");
         for(let i =0; i<connectedNavs.length; i++)
         {
+            setTimeout(() =>{
+                connection?.classList.add("connected");
+            } ,250)
             connectedNavs[i].classList.remove("connected");
         }
     }
@@ -103,14 +105,13 @@ function subNavInit(subNavItem: HTMLElement)
     let navItems: HTMLElement[] = Array.from(<NodeListOf<HTMLElement>>parentSubNav?.querySelectorAll("NAV-ITEM"));
     let connections: HTMLElement[] = Array.from(<NodeListOf<HTMLElement>>parentSubNav?.querySelectorAll(".connection"));
     let connection: HTMLElement | null = connections[navItems.indexOf(subNavItem)];
-    console.log(connection);
     
     if(connection)
     {
         //timing the change, have to make it a bit more smoother than this 
         setTimeout(() =>{
             connection?.classList.add("connected");
-        } ,500)
+        } ,250)
         
     }
 }

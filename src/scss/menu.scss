@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$defaultcolor: white;
+$hovercolor: rgb(255, 255, 189);
+$clickedcolor: teal;
+
+$connectioncolor: rgb(255, 255, 255);
+
 html
 {
     padding: 0;
@@ -9,7 +16,8 @@ html
         padding: 0;
         margin: 0;
         nav-vert
-        {
+        { 
+
             transition: .5s;
             font-family: 'Poppins', sans-serif;
             padding: 0;
@@ -41,40 +49,37 @@ html
                 }
                 .connection.connection-1 
                 {
-                    // display: none;
                     position: absolute;
                     width: .5rem;
                     height: 1rem;
                     border-top: none;
                     border-right: none;
-                    border-bottom: .1rem solid rgba(255, 255, 255, 0.549);
-                    border-left: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-bottom: .1rem solid $connectioncolor;
+                    border-left: .1rem solid $connectioncolor;
                     border-bottom-left-radius: .2rem;
                 }
                 .connection.connection-2
                 {
-                    // display: none;
                     position: absolute;
                     width: .5rem;
                     height: 3rem;
                     top: 0;
                     border-top: none;
                     border-right: none;
-                    border-bottom: .1rem solid rgba(255, 255, 255, 0.549);
-                    border-left: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-bottom: .1rem solid $connectioncolor;
+                    border-left: .1rem solid $connectioncolor;
                     border-bottom-left-radius: .2rem;
                 }
                 .connection.connection-3
                 {
-                    // display: none;
                     position: absolute;
                     width: .5rem;
                     height: 5.5rem;
                     top: 0;
                     border-top: none;
                     border-right: none;
-                    border-bottom: .1rem solid rgba(255, 255, 255, 0.549);
-                    border-left: .1rem solid rgba(255, 255, 255, 0.549);
+                    border-bottom: .1rem solid $connectioncolor;
+                    border-left: .1rem solid $connectioncolor;
                     border-bottom-left-radius: .2rem;
                 }
                 nav-item
@@ -100,13 +105,13 @@ html
                         transition: .5s;
                         width: 20px;
                         height: 20px;
-                        color: white;
+                        color: $defaultcolor;
                     }
                 }
                 nav-label
                 {
                     transition: .5s;
-                    color: white;
+                    color: $defaultcolor;
                 }
                 &:hover
                 {
@@ -118,13 +123,13 @@ html
                         ion-icon
                         {
                             transition: .5s;
-                            color: rgb(255, 255, 189);
+                            color: $hovercolor;
                         }
                     }
                     nav-label
                     {
                         transition: .5s;
-                        color: rgb(255, 255, 189);
+                        color: $hovercolor;
                     }
                 }
                 &.current
@@ -137,13 +142,13 @@ html
                         ion-icon
                         {
                             transition: .5s;
-                            color: teal;
+                            color: $clickedcolor;
                         }
                     }
                     nav-label
                     {
                         transition: .5s;
-                        color: teal;
+                        color: $clickedcolor;
                     }
                 }
             }

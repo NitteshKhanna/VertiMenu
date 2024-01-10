@@ -17,7 +17,6 @@ html body nav-vert {
   top: 10vh;
   left: 0;
   min-width: 5vw;
-  width: -moz-min-content;
   width: min-content;
   max-width: max-content1vw;
   display: flex;
@@ -42,8 +41,8 @@ html body nav-vert sub-nav .connection.connection-1 {
   height: 1rem;
   border-top: none;
   border-right: none;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.549);
-  border-left: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-bottom: 0.1rem solid rgb(255, 255, 255);
+  border-left: 0.1rem solid rgb(255, 255, 255);
   border-bottom-left-radius: 0.2rem;
 }
 html body nav-vert sub-nav .connection.connection-2 {
@@ -53,8 +52,8 @@ html body nav-vert sub-nav .connection.connection-2 {
   top: 0;
   border-top: none;
   border-right: none;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.549);
-  border-left: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-bottom: 0.1rem solid rgb(255, 255, 255);
+  border-left: 0.1rem solid rgb(255, 255, 255);
   border-bottom-left-radius: 0.2rem;
 }
 html body nav-vert sub-nav .connection.connection-3 {
@@ -64,8 +63,8 @@ html body nav-vert sub-nav .connection.connection-3 {
   top: 0;
   border-top: none;
   border-right: none;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.549);
-  border-left: 0.1rem solid rgba(255, 255, 255, 0.549);
+  border-bottom: 0.1rem solid rgb(255, 255, 255);
+  border-left: 0.1rem solid rgb(255, 255, 255);
   border-bottom-left-radius: 0.2rem;
 }
 html body nav-vert sub-nav nav-item {
@@ -76,7 +75,6 @@ html body nav-vert nav-item {
   flex-basis: 100%;
   padding: 5px;
   display: flex;
-  width: -moz-max-content;
   width: max-content;
   align-items: center;
   cursor: pointer;
@@ -124,4 +122,6 @@ html body nav-vert nav-item.current nav-icon ion-icon {
 html body nav-vert nav-item.current nav-label {
   transition: 0.5s;
   color: teal;
-}/*# sourceMappingURL=menu.css.map */
+}
+
+/*# sourceMappingURL=menu.css.map */
