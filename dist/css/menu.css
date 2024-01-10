@@ -30,45 +30,19 @@ html body nav-vert sub-nav {
   z-index: 0;
 }
 html body nav-vert sub-nav .connection {
-  display: none;
+  position: absolute;
+  width: 0.5rem;
+  height: 6rem;
+  border-top: none;
+  border-right: none;
+  border-left: 0.1rem solid rgb(255, 255, 255);
+  border-bottom-left-radius: 0.2rem;
 }
 html body nav-vert sub-nav .connection.connected {
-  display: block;
-}
-html body nav-vert sub-nav .connection.connection-1 {
-  position: absolute;
-  width: 0.5rem;
-  height: 1rem;
-  border-top: none;
-  border-right: none;
   border-bottom: 0.1rem solid rgb(255, 255, 255);
-  border-left: 0.1rem solid rgb(255, 255, 255);
-  border-bottom-left-radius: 0.2rem;
-}
-html body nav-vert sub-nav .connection.connection-2 {
-  position: absolute;
-  width: 0.5rem;
-  height: 3rem;
-  top: 0;
-  border-top: none;
-  border-right: none;
-  border-bottom: 0.1rem solid rgb(255, 255, 255);
-  border-left: 0.1rem solid rgb(255, 255, 255);
-  border-bottom-left-radius: 0.2rem;
-}
-html body nav-vert sub-nav .connection.connection-3 {
-  position: absolute;
-  width: 0.5rem;
-  height: 5.5rem;
-  top: 0;
-  border-top: none;
-  border-right: none;
-  border-bottom: 0.1rem solid rgb(255, 255, 255);
-  border-left: 0.1rem solid rgb(255, 255, 255);
-  border-bottom-left-radius: 0.2rem;
 }
 html body nav-vert sub-nav nav-item {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 html body nav-vert nav-item {
   transition: 0.5s;
@@ -117,11 +91,11 @@ html body nav-vert nav-item.current nav-icon {
 }
 html body nav-vert nav-item.current nav-icon ion-icon {
   transition: 0.5s;
-  color: teal;
+  color: rgb(179, 255, 255);
 }
 html body nav-vert nav-item.current nav-label {
   transition: 0.5s;
-  color: teal;
+  color: rgb(179, 255, 255);
 }
 
 /*# sourceMappingURL=menu.css.map */

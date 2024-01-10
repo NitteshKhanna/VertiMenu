@@ -2,39 +2,45 @@ document.addEventListener("DOMContentLoaded",nav_vert_init)
 //Initiates the nav-vert
 function nav_vert_init()
 {
-    var nav_vert: Element | null = document.querySelector("nav-vert");
     //checks if there is actually a nav-vert in the html file
-    if(nav_vert == null)
+    var nav_vert: HTMLElement | null = document.querySelector("NAV-VERT");
+    if(!nav_vert)
     {
         console.log("no nav-vert :(");
         return;
     }
+
+    //initializing all the sub-navs with connections
+    subNavInit(nav_vert);
+
     //adding the eventlisteners onto all the nav-items
-    let nav_items: NodeListOf<Element> = nav_vert.querySelectorAll("nav-item");
-    for(let i=0; i<nav_items.length; i++)
-    {
-        let nav_item: Element =  nav_items[i];
-        nav_item.addEventListener("click", (event)=>{
-            menuItemClicked(event);
-        });
-    }
+    let nav_items: NodeListOf<HTMLElement> = nav_vert.querySelectorAll("NAV-ITEM");
+    nav_items.forEach((nav_item)=>nav_item.addEventListener("click", (event)=>menuItemClicked(event)));
 }
+
 //when an item in the menu is clicked
 function menuItemClicked(event: Event)
 {
+
     const clickedItem: HTMLElement = <HTMLElement>event.target;
     let currentElement = removeAlreadyCurrent(clickedItem);
     //adding the current class to the clicked item
     if(currentElement)
     {
+        let nav_vert: HTMLElement = <HTMLElement>currentElement.closest("NAV-VERT");
+        if(!nav_vert)
+        {
+            console.log("NAV-VERT not found :(")
+            return;
+        }
+        subNavInit(nav_vert);
         currentElement.classList.add("current");
-
         if(currentElement.parentElement)
         {
             let parentElement = currentElement.parentElement;
             if(parentElement.tagName == "SUB-NAV")
             {
-                subNavInit(currentElement);
+                connect(currentElement);
             }
         }
     }
@@ -80,38 +86,62 @@ function removeAlreadyCurrent(currentItem: HTMLElement)
         return currentNavItem;
     }
     else{
-        console.log("something terribly went wrong");
+        console.log("Parent element of Nav-Item not found");
         return null;
     }
 }
 
-function subNavInit(subNavItem: HTMLElement)
+function subNavInit(parentNavVert: HTMLElement)
 {
-    // console.log("SubNavInit", subNavItem);
-    
-    let parentSubNav: HTMLElement | null = subNavItem.parentElement;
-    if(parentSubNav)
-    {
-        let connectedNavs = parentSubNav.querySelectorAll(".connected");
-        for(let i =0; i<connectedNavs.length; i++)
+    let parentSubNavs: HTMLElement[] = Array.from(parentNavVert.querySelectorAll("SUB-NAV"));
+    parentSubNavs.forEach((parentSubNav) => {
+
+        if(!parentSubNav)
         {
-            setTimeout(() =>{
-                connection?.classList.add("connected");
-            } ,250)
-            connectedNavs[i].classList.remove("connected");
+            console.log("Sub nav of the sub nav item was not found");
+            return;
         }
+        //remove existing connections 
+        let connectionsArray = Array.from(<NodeListOf<HTMLElement>>parentSubNav.querySelectorAll(".connection"));
+        connectionsArray.forEach((connection)=>parentSubNav?.removeChild(connection));
+        //remove existing connecteds
+        let connectedsArray = Array.from(<NodeListOf<HTMLElement>>parentSubNav.querySelectorAll(".connected"));
+        connectedsArray.forEach((connected)=>connected.classList.remove("connected"));
+        //create a new connection 
+        let connection: HTMLElement = document.createElement("div");
+        connection.className = "connection";
+        parentSubNav?.insertBefore(connection, parentSubNav.firstChild);
+    })
+}
+
+function connect(subNavItem: HTMLElement)
+{
+    let parentSubNav: HTMLElement | null = subNavItem.parentElement;
+    if(!parentSubNav)
+    {
+        console.log("Sub nav parent of the sub nav was not found");
+        return;
     }
 
-    let navItems: HTMLElement[] = Array.from(<NodeListOf<HTMLElement>>parentSubNav?.querySelectorAll("NAV-ITEM"));
-    let connections: HTMLElement[] = Array.from(<NodeListOf<HTMLElement>>parentSubNav?.querySelectorAll(".connection"));
-    let connection: HTMLElement | null = connections[navItems.indexOf(subNavItem)];
-    
-    if(connection)
+    //calculating the subNacItem's position in the parentSubNav 
+    let subNavItems: HTMLElement[] = Array.from(parentSubNav.querySelectorAll("NAV-ITEM"));
+    let subNavPosition: number = subNavItems.indexOf(subNavItem);
+
+    //clearing all the existing connections
+    let connects: NodeListOf<HTMLElement> = parentSubNav.querySelectorAll(".connection");
+    // if(connects.length>1)
+    // subNavInit(parentSubNav);
+    let connect: HTMLElement | null = parentSubNav.querySelector(".connection");
+    if(!connect)
     {
-        //timing the change, have to make it a bit more smoother than this 
-        setTimeout(() =>{
-            connection?.classList.add("connected");
-        } ,250)
-        
+        console.log("connection div wasn't found ");
+        return;
     }
+
+    connect.classList.add("connected");
+    //changing the height according the position of the nav-item that is being clicked
+    let navItemHeight: number = subNavItem.clientHeight;
+    let connectionHeight: number = 10 + (subNavPosition * navItemHeight);
+    connect.style.height = connectionHeight.toString()+"px";
+    
 }

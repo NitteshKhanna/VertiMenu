@@ -2,7 +2,7 @@
 
 $defaultcolor: white;
 $hovercolor: rgb(255, 255, 189);
-$clickedcolor: teal;
+$clickedcolor: rgb(179, 255, 255);
 
 $connectioncolor: rgb(255, 255, 255);
 
@@ -40,51 +40,23 @@ html
 
                 .connection 
                 {
-                    display: none;
+                    // display: block;
+                    position: absolute;
+                    width: .5rem;
+                    height: 6rem;
+                    border-top: none;
+                    border-right: none;
+                    border-left: .1rem solid $connectioncolor;
+                    border-bottom-left-radius: .2rem;
                 }
                 .connection.connected
                 {
-                    
-                    display: block;
-                }
-                .connection.connection-1 
-                {
-                    position: absolute;
-                    width: .5rem;
-                    height: 1rem;
-                    border-top: none;
-                    border-right: none;
                     border-bottom: .1rem solid $connectioncolor;
-                    border-left: .1rem solid $connectioncolor;
-                    border-bottom-left-radius: .2rem;
                 }
-                .connection.connection-2
-                {
-                    position: absolute;
-                    width: .5rem;
-                    height: 3rem;
-                    top: 0;
-                    border-top: none;
-                    border-right: none;
-                    border-bottom: .1rem solid $connectioncolor;
-                    border-left: .1rem solid $connectioncolor;
-                    border-bottom-left-radius: .2rem;
-                }
-                .connection.connection-3
-                {
-                    position: absolute;
-                    width: .5rem;
-                    height: 5.5rem;
-                    top: 0;
-                    border-top: none;
-                    border-right: none;
-                    border-bottom: .1rem solid $connectioncolor;
-                    border-left: .1rem solid $connectioncolor;
-                    border-bottom-left-radius: .2rem;
-                }
+
                 nav-item
                 {
-                    margin-left: 1rem;
+                    margin-left: .5rem;
                 }
             }
             nav-item 
