@@ -44,7 +44,9 @@ html
                     border-top: none;
                     border-right: none;
                     border-left: .1rem solid $connectioncolor;
-                    border-bottom-left-radius: .2rem;
+                    border-bottom-left-radius: .1rem;
+                    border-bottom-right-radius: .1rem;
+
                 }
                 .connection.connected
                 {
