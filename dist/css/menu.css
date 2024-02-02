@@ -15,7 +15,7 @@ html body nav-vert {
   margin: 0;
   position: fixed;
   top: 10vh;
-  left: 0;
+  left: 4vw;
   min-width: 5vw;
   width: min-content;
   max-width: max-content1vw;
@@ -35,7 +35,8 @@ html body nav-vert sub-nav .connection {
   border-top: none;
   border-right: none;
   border-left: 0.1rem solid rgb(255, 255, 255);
-  border-bottom-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
 }
 html body nav-vert sub-nav .connection.connected {
   border-bottom: 0.1rem solid rgb(255, 255, 255);
