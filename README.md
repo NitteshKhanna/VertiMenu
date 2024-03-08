@@ -26,6 +26,23 @@ VertiMenu is a customizable JavaScript plugin that creates a stylish vertical me
             <nav-icon>You're about icon</nav-icon>
             <nav-label>About</nav-label>
         </nav-item>
+        <sub-nav>
+            <nav-item>
+                <nav-icon>You're about icon</nav-icon>
+                <nav-label>About 1</nav-label>
+            </nav-item>
+
+            <nav-item>
+                <nav-icon>You're about icon</nav-icon>
+                <nav-label>About 2</nav-label>
+            </nav-item>
+
+            <nav-item>
+                <nav-icon>You're about icon</nav-icon>
+                <nav-label>About 3</nav-label>
+            </nav-item>
+            ....
+        </sub-nav>
         ....
 </nav-vert>
 ```
